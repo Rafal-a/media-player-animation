@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ConstraintSet android:id="@+id/start">
+
+        <Constraint
+            android:layout_height="40dp"
+            android:layout_width="match_parent"
+            android:id="@+id/video_title"
+            app:layout_constraintTop_toBottomOf="@+id/youtube_image"
+            app:layout_editor_absoluteX="0dp"
+            android:layout_marginTop="0dp" />
+        <Constraint
+            android:layout_height="50dp"
+            android:layout_width="50dp"
+            android:id="@+id/play_arrow"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@android:color/transparent"
+            app:layout_constraintStart_toStartOf="@+id/youtube_image"
+            app:layout_constraintBottom_toBottomOf="@+id/youtube_image"
+            app:layout_constraintTop_toTopOf="@+id/youtube_image"
+            app:visibilityMode="normal"/>
+
+        <Constraint
+            android:layout_height="247dp"
+            android:layout_width="414dp"
+            android:id="@+id/youtube_image"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_editor_absoluteX="-29dp"
+            app:layout_editor_absoluteY="-4dp" />
+    </ConstraintSet>
+
+
+    <!-- constraint End  -->
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:layout_height="60dp"
+            android:layout_width="60dp"
+            android:id="@+id/youtube_image"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+
+        <Constraint
+            android:id="@+id/video_title"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="60dp"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/youtube_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"/>
+        <Constraint
+            android:layout_height="50dp"
+            app:layout_constraintStart_toStartOf="@id/youtube_image"
+            app:layout_constraintTop_toTopOf="@+id/video_title"
+            app:layout_constraintBottom_toBottomOf="@id/youtube_image"
+            app:layout_constraintHorizontal_bias="0.842"
+            app:layout_constraintEnd_toEndOf="@+id/video_title"
+            android:layout_width="50dp"
+            android:id="@+id/play_arrow"
+            app:layout_constraintVertical_bias="0.0"
+            android:elevation="16dp"/>
+
+
+    </ConstraintSet>
+
+    <Transition
+        app:constraintSetEnd="@id/end"
+        app:constraintSetStart="@+id/start">
+        <OnSwipe app:dragDirection="dragUp"
+            app:touchAnchorId="@+id/youtube_image">
+
+        </OnSwipe>
+
+
+    </Transition>
+</MotionScene>
