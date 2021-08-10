@@ -6,3 +6,6 @@ the items used in this project :
 --image view
 -- text view
 -- motion layout
+
+video of the proposed layout 
+https://streamable.com/u96wbq
